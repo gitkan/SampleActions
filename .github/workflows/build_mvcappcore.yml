@@ -33,7 +33,7 @@ jobs:
       with:
         # Artifact name
         name: artifact-sample
-        # path: 
+        path: \SampleActions.MvcAppCore\SampleActions.MvcAppCore\bin\Debug\net6.0\*.dll
         # The desired behavior if no files are found using the provided path.
   
   notification:
@@ -47,6 +47,6 @@ jobs:
         # Artifact name
         name: artifact-sample
         # Destination path
-        # path: # optional
+        path: \SampleActions.MvcAppCore\SampleActions.MvcAppCore\output
 #    - name: echo message
 #      run: eval echo 'finished!!'
