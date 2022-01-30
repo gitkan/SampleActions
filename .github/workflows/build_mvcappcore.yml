@@ -28,3 +28,10 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+  
+  notification:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: echo message
+      run: echo 'finished!!'
