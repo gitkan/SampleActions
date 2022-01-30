@@ -30,6 +30,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
   
   notification:
+    needs: build
     runs-on: ubuntu-latest
     
     steps:
