@@ -34,5 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: pre
+      run: \#!/usr/bin/env bash
     - name: echo message
       run: echo 'finished!!'
