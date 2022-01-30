@@ -28,11 +28,25 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Upload  a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        # Artifact name
+        name: artifact-sample
+        # path: 
+        # The desired behavior if no files are found using the provided path.
   
   notification:
     needs: build
     runs-on: ubuntu-latest
     
     steps:
-    - name: echo message
-      run: eval echo 'finished!!'
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.1.0
+      with:
+        # Artifact name
+        name: artifact-sample
+        # Destination path
+        # path: # optional
+#    - name: echo message
+#      run: eval echo 'finished!!'
