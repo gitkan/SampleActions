@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 env:
-  target_phrase: "password", "pwd", "apikey"
+  TARGET_PHRASE: "password", "pwd", "apikey"
 
 jobs:
   build:
@@ -23,6 +23,6 @@ jobs:
 
       - name: PowerShell Core Action
         shell: pwsh
-        run: Get-ChildItem -R | Select-String -Pattern ${{ env.target_phrase }} -List | Select-Object Path
+        run: Get-ChildItem -R | Select-String -Pattern ${{ env.TARGET_PHRASE }} -List | Select-Object Path
         # run: Get-ChildItem -R | Select-String -Pattern "password", "pwd", "apikey" -List | Select-Object Path
         
