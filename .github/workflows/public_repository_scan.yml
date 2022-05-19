@@ -26,3 +26,6 @@ jobs:
         run: Get-ChildItem -R | Select-String -Pattern ${{ env.TARGET_PHRASE }} -List | Select-Object Path
         # run: Get-ChildItem -R | Select-String -Pattern "password", "pwd", "apikey" -List | Select-Object Path
         
+      - name: Set result status
+        uses: actions/checkout@v3
+        run: ${{ job.status = 'failure' }}
