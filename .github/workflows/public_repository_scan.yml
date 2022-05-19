@@ -28,10 +28,11 @@ jobs:
           #path: # optional
         
       - name: PowerShell Core Action
+      - uses: actions/checkout@v2
       - run: |
         Get-ChildItem -R | Select-String -Pattern "password", "pwd", "apikey" -List | Select-Object Path
         shell: pwsh
-        
+
       # - name: Azure PowerShell Action
       #   uses: Azure/powershell@v1
       #   with:
