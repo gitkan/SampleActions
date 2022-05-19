@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 env:
-  TARGET_PHRASE: "password"
+  TARGET_PHRASE: "'password', 'pwd', 'apikey'"
 
 jobs:
   build:
