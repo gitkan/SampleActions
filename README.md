@@ -1,16 +1,14 @@
-# SampleActions
-
 ## GitHub Actions
-### check file content 🆖
+### 🆖 check file content
 [![check file content](https://github.com/gitkan/SampleActions/actions/workflows/public_repository_scan.yml/badge.svg)](https://github.com/gitkan/SampleActions/actions/workflows/public_repository_scan.yml)
 
-### Gitleaks scanning 🆗
+### 🆗 Gitleaks scanning
 [![gitleaks scanning](https://github.com/gitkan/SampleActions/actions/workflows/gitleaks_action.yml/badge.svg)](https://github.com/gitkan/SampleActions/actions/workflows/gitleaks_action.yml)
 <img alt="gitleaks badge" src="https://img.shields.io/badge/protected%20by-gitleaks-blue">
 - https://github.com/gitleaks/gitleaks-action
 - https://github.com/zricethezav/gitleaks
 
-#### サンプル実装および結果
+## :office: サンプル実装および結果
 - :page_facing_up: サンプル実装　：[gitleaks_action.yml](/.github/workflows/gitleaks_action.yml)
 - :memo: サンプル脆弱性　：[dummy_code.md](/dummy_code.md)
 - 💻 出力結果（例）
