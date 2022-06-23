@@ -13,12 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v3
+      - name: checkout - current repo
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Gitleaks
+      - name: Gitleaks - current repo
         uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: checkout - target repo
+        uses: actions/checkout@v3
+        with:
+          repository: ayumioka/wiki
+          path: wiki
+
+      - name: Gitleaks - target repo
+        uses: gitleaks/gitleaks-action@v2
