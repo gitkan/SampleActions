@@ -11,7 +11,20 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    env:
+      path_to_host_folder_to_scan: .
+      gl_command: "detect --redact -v --exit-code=2 --report-format=sarif --report-path=results.sarif --log-level=debug"
+      gl_options: "--no-git"
     steps:
+      - name: checkout - current repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: docker pull - gitleaks
+        run: docker pull zricethezav/gitleaks:latest
+      - name: docker run - gitleaks
+        run: docker run -v ${path_to_host_folder_to_scan}:/path zricethezav/gitleaks:latest $gl_command --source="/path" $gl_options
 
 #      - name: checkout - current repo
 #        uses: actions/checkout@v3
@@ -21,15 +34,15 @@ jobs:
 #      - name: Gitleaks - current repo
 #        uses: gitleaks/gitleaks-action@v2
 
-      - name: checkout - target repo
-        if: always()
-        uses: actions/checkout@v3
-        with:
+#      - name: checkout - target repo
+#        if: always()
+#        uses: actions/checkout@v3
+#        with:
 #         repository: ayumioka/wiki
 #         path: ayumioka/wiki
-          repository: tagoyellow412/tago-test
-          fetch-depth: 0
+#          repository: tagoyellow412/tago-test
+#          fetch-depth: 0
 
-      - name: Gitleaks - target repo
-        if: always()
-        uses: gitleaks/gitleaks-action@v2
+#      - name: Gitleaks - target repo
+#        if: always()
+#        uses: gitleaks/gitleaks-action@v2
