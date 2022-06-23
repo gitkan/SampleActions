@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: checkout - current repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+#      - name: checkout - current repo
+#        uses: actions/checkout@v3
+#        with:
+#          fetch-depth: 0
 
-      - name: Gitleaks - current repo
-        uses: gitleaks/gitleaks-action@v2
+#      - name: Gitleaks - current repo
+#        uses: gitleaks/gitleaks-action@v2
 
       - name: checkout - target repo
         if: always()
@@ -29,6 +29,7 @@ jobs:
 #         path: ayumioka/wiki
           repository: tagoyellow412/tago-test
           path: tagoyellow412/tago-test
+          fetch-depth: 0
 
       - name: Gitleaks - target repo
         if: always()
