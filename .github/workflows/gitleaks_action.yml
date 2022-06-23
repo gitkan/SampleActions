@@ -20,11 +20,15 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
+      - name: check env_variables
+        run: |
+          echo "path_to_host_folder_to_scan :" $path_to_host_folder_to_scan
+          echo "gl_command :" $gl_command
+          echo "gl_options :" $gl_options
       - name: docker pull - gitleaks
         run: docker pull zricethezav/gitleaks:latest
       - name: docker run - gitleaks
-        run: docker run -v ${path_to_host_folder_to_scan}:/path zricethezav/gitleaks:latest $gl_command --source="/path" $gl_options
+        run: docker run -v $PWD:/path zricethezav/gitleaks:latest $gl_command --source="/path" $gl_options
 
 #      - name: checkout - current repo
 #        uses: actions/checkout@v3
