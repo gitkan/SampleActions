@@ -5,6 +5,7 @@
 [![check file content](https://github.com/gitkan/SampleActions/actions/workflows/public_repository_scan.yml/badge.svg)](https://github.com/gitkan/SampleActions/actions/workflows/public_repository_scan.yml)
 
 ### Gitleaks scanning
+[![gitleaks scanning](https://github.com/gitkan/SampleActions/actions/workflows/gitleaks_action.yml/badge.svg)](https://github.com/gitkan/SampleActions/actions/workflows/gitleaks_action.yml)
 <img alt="gitleaks badge" src="https://img.shields.io/badge/protected%20by-gitleaks-blue">
 
 ## Task List
