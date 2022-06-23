@@ -16,17 +16,21 @@ jobs:
       gl_command: "detect --redact -v --exit-code=2 --report-format=sarif --report-path=results.sarif --log-level=debug"
       gl_options: "--no-git"
     steps:
+      - name: display env_variables
+        run: |
+          echo "path_to_host_folder_to_scan :" $path_to_host_folder_to_scan
+          echo "gl_command :" $gl_command
+          echo "gl_options :" $gl_options
       - name: checkout - current repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: checkout - target repo
         uses: actions/checkout@v3
         with:
           repository: tagoyellow412/tago-test
           path: tagoyellow412/tago-test
           fetch-depth: 0
-      - name: check env_variables
-        run: |
-          echo "path_to_host_folder_to_scan :" $path_to_host_folder_to_scan
-          echo "gl_command :" $gl_command
-          echo "gl_options :" $gl_options
       - name: docker pull - gitleaks
         run: docker pull zricethezav/gitleaks:latest
       - name: docker run - gitleaks
