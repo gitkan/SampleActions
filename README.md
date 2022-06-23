@@ -12,6 +12,7 @@
 
 #### サンプル実装および結果
 - :page_facing_up: サンプル実装　：[gitleaks_action.yml](/.github/workflows/gitleaks_action.yml)
+- :memo: サンプル脆弱性　：[dummy_code.md](/dummy_code.md)
 - 💻 出力結果（例）
 ```
 {
