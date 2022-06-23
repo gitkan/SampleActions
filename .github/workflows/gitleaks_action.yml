@@ -28,7 +28,6 @@ jobs:
 #         repository: ayumioka/wiki
 #         path: ayumioka/wiki
           repository: tagoyellow412/tago-test
-          path: tagoyellow412/tago-test
           fetch-depth: 0
 
       - name: Gitleaks - target repo
