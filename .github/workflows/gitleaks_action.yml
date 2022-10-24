@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       path_to_host_folder_to_scan: .
-      gl_command: "detect --redact -v --exit-code=2 --report-format=sarif --report-path=results.sarif --log-level=debug"
+      # gl_command: "detect --redact -v --exit-code=2 --report-format=sarif --report-path=results.sarif --log-level=debug"
+      gl_command: "detect --redact -v --exit-code=2 --report-format=sarif --log-level=debug"
       gl_options: "--no-git"
     steps:
       - name: display env_variables
